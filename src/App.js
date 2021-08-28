@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // #material-ui :
 import { ThemeProvider } from "@material-ui/core";
 import Light from "./styles/Light";
+import Dark from "./styles/Dark";
 
 // #pages :
 import sample from "./pages/sample";
 
 // #components :
-
 export default function App() {
   return (
     <>
