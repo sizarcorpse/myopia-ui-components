@@ -1,4 +1,5 @@
 import React from "react";
+import Proptypes from "prop-types";
 
 import { withStyles, Button, Link } from "@material-ui/core";
 
@@ -6,7 +7,7 @@ const MpButton = (props) => {
   const { children, varient, linkTo } = props;
 
   return (
-    <Link href={linkTo ? `${linkTo}` : "#"} underline="none">
+    <Link href={linkTo} underline="none">
       <Button
         variant={varient === "primary" ? "contained" : "contained"}
         color={
@@ -21,6 +22,15 @@ const MpButton = (props) => {
       </Button>
     </Link>
   );
+};
+MpButton.defaultProps = {
+  linkTo: "#"
+};
+
+MpButton.propTypes = {
+  children: Proptypes.node.isRequired,
+  varient: Proptypes.oneOf(["primary", "secondary"]),
+  linkTo: Proptypes.string
 };
 
 export default withStyles(

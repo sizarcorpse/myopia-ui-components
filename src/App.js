@@ -16,7 +16,6 @@ export default function App() {
       <ThemeProvider theme={Light}>
         <Router>
           <Route path="/" component={sample} />
-
           <Switch></Switch>
         </Router>
       </ThemeProvider>

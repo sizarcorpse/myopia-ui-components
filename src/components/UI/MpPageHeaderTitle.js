@@ -1,5 +1,5 @@
 import React from "react";
-
+import Proptypes from "prop-types";
 import { withStyles, makeStyles, Box, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MpPageHeaderTitle = (props) => {
-  const { children, title, content } = props;
+  const { children, title } = props;
 
   const localClasses = useStyles();
 
@@ -47,6 +47,11 @@ const MpPageHeaderTitle = (props) => {
       </Box>
     </Box>
   );
+};
+
+MpPageHeaderTitle.protoTypes = {
+  children: Proptypes.node.isRequired,
+  title: Proptypes.string.isRequired
 };
 
 export default withStyles(

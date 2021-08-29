@@ -1,7 +1,7 @@
 import React from "react";
 
-import MpPageHeaderTitle from "./MpPageHeaderTitle";
-import MpButton from "./MpButton";
+import MpPageHeaderTitle from "../UI/MpPageHeaderTitle";
+import MpButton from "../UI/MpButton";
 import {
   withStyles,
   makeStyles,
