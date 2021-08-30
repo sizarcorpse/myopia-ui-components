@@ -124,7 +124,7 @@ const Mptechnology = (props) => {
       alignItems="center"
       className={localClasses.root}
     >
-      <Grid item xl={7} lg={6} md={10} sm={12} xs={12}>
+      <Grid item xl={7} lg={7} md={10} sm={12} xs={12}>
         <Box className={localClasses.technoloyContent}>
           <Typography variant="body1" color="secondary">
             State-of-the-art
@@ -149,7 +149,7 @@ const Mptechnology = (props) => {
           </Box>
         </Box>
       </Grid>
-      <Grid item xl={5} lg={6} md={12} sm={12} xs={12}>
+      <Grid item xl={5} lg={5} md={12} sm={12} xs={12}>
         <Box className={localClasses.technologyImage}>
           <img
             alt=""
