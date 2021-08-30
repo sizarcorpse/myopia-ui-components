@@ -1,11 +1,11 @@
 import React from "react";
 
-//UI
-import MpButton from "../components/MpButton";
-import MpPageHeaderTitle from "../components/MpPageHeaderTitle";
+import MpIconBox from "../components/UI/MpIconBox";
 
 //Componetns
-import MpPageHeader from "../components/MpPageHeader";
+import MpPageHeader from "../components/sections/MpPageHeader";
+import MpIntroduction from "../components/sections/MpIntroduction";
+import MpTechnology from "../components/sections/MpTechnology";
 
 import {
   withStyles,
@@ -19,11 +19,25 @@ const GCard = (props) => {
 
   return (
     <Grid component="main">
+      <CssBaseline />
       <Grid item xs={12}>
-        <CssBaseline />
         <Box>
           <MpPageHeader />
         </Box>
+      </Grid>
+      <Grid item xs={12}>
+        <Container>
+          <Box>
+            <MpIntroduction />
+          </Box>
+        </Container>
+      </Grid>
+      <Grid item xs={12} style={{ backgroundColor: "#EDF1F6" }}>
+        <Container>
+          <Box>
+            <MpTechnology />
+          </Box>
+        </Container>
       </Grid>
     </Grid>
   );

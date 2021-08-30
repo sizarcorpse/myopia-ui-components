@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   introImageContent: {
     padding: theme.spacing(4),
+    display: "flex",
+    justifyContent: "center",
     "& img": {
       width: "100%",
       maxWidth: 442,

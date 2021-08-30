@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "flex-start",
     gap: theme.spacing(2.5),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       flexDirection: "row"
     },
     "& img": {
@@ -21,13 +21,16 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   iconContent: {
-    "& h5": {},
+    "& h5": {
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.2rem"
+      }
+    },
 
     "& p": {
-      width: "28ch",
       marginTop: theme.spacing(1),
-      [theme.breakpoints.down("sm")]: {
-        width: "auto"
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "43ch"
       }
     }
   }

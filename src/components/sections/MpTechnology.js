@@ -64,6 +64,24 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "space-between",
     gap: theme.spacing(2.5)
+  },
+  technologyItem: {
+    margin: theme.spacing(0.5, 0),
+    [theme.breakpoints.up("sm")]: {
+      flex: "1 1 45%"
+    }
+  },
+  technologyImage: {
+    padding: theme.spacing(4),
+    display: "flex",
+    justifyContent: "center",
+    "& img": {
+      width: "100%",
+      maxWidth: 442,
+      [theme.breakpoints.down("xs")]: {
+        padding: theme.spacing(0)
+      }
+    }
   }
 }));
 
@@ -106,7 +124,7 @@ const Mptechnology = (props) => {
       alignItems="center"
       className={localClasses.root}
     >
-      <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
+      <Grid item xl={7} lg={6} md={10} sm={12} xs={12}>
         <Box className={localClasses.technoloyContent}>
           <Typography variant="body1" color="secondary">
             State-of-the-art
@@ -124,13 +142,20 @@ const Mptechnology = (props) => {
           </Box>
           <Box className={localClasses.technologyItems}>
             {data.map((item, i) => (
-              <MpIconBox key={i} item={item} />
+              <Box key={i} className={localClasses.technologyItem}>
+                <MpIconBox item={item} />
+              </Box>
             ))}
           </Box>
         </Box>
       </Grid>
-      <Grid item xl={6} lg={6} md={12} sm={12} xs={12}>
-        <Box className={localClasses.technologyImage}>hi</Box>
+      <Grid item xl={5} lg={6} md={12} sm={12} xs={12}>
+        <Box className={localClasses.technologyImage}>
+          <img
+            alt=""
+            src="https://images.prismic.io/myopia/98cba092-c24f-433d-9aa3-eeac72061ce1_locallyownedimage.png"
+          />
+        </Box>
       </Grid>
     </Grid>
   );
