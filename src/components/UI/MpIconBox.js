@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 const MpIconBox = (props) => {
-  const { children, item } = props;
+  const { item } = props;
   const localClasses = useStyles();
   return (
     <Box className={localClasses.root}>

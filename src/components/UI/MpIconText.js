@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { withStyles, makeStyles, Box, Typography } from "@material-ui/core";
+import {
+  withStyles,
+  makeStyles,
+  Box,
+  Typography,
+  Link
+} from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(4),
@@ -43,7 +49,9 @@ const MpIconText = (props) => {
   return (
     <Box className={localClasses.root}>
       <img alt="" src={icon} />
-      <Typography variant="body1">{title}</Typography>
+      <Link href="" underline="none">
+        <Typography variant="body1">{title}</Typography>
+      </Link>
     </Box>
   );
 };

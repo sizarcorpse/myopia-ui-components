@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       justifyContent: "center"
     },
-    "& p": {
+    "& > p": {
       margin: theme.spacing(2.5, 0),
       [theme.breakpoints.down("xs")]: {
         textAlign: "center"
@@ -67,19 +67,22 @@ const MpIntroduction = (props) => {
         </Box>
       </Grid>
       <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
-        <Box className={localClasses.pageHeaderContent}>
-          <Box className={localClasses.introContent}>
-            <MpSectionTitle />
-            <Typography variant="body1" color="primary">
-              Our team of specialised radiologists, technicians and
-              receptionists across our two sites are committed to providing
-              patients and their referring clinicians with the highest standards
-              of care in our modern, professional, and comfortable environments.
-            </Typography>
-            <MpButton varient="primary" linkTo="/services">
-              Choose Service
-            </MpButton>
-          </Box>
+        <Box className={localClasses.introContent}>
+          <MpSectionTitle
+            motto="WE ARE"
+            title="Locally Owned and Operated."
+            align="left"
+          />
+
+          <Typography variant="body1" color="primary">
+            Our team of specialised radiologists, technicians and receptionists
+            across our two sites are committed to providing patients and their
+            referring clinicians with the highest standards of care in our
+            modern, professional, and comfortable environments.
+          </Typography>
+          <MpButton varient="primary" linkTo="/services">
+            Choose Service
+          </MpButton>
         </Box>
       </Grid>
     </Grid>
