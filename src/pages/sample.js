@@ -7,6 +7,7 @@ import MpIntroduction from "../components/sections/MpIntroduction";
 import MpTechnology from "../components/sections/MpTechnology";
 import MpServices from "../components/sections/MpServices";
 import MpVideo from "../components/sections/MpVideo";
+import MpTestimonials from "../components/sections/MpTestimonials";
 
 import {
   withStyles,
@@ -21,12 +22,10 @@ const GCard = (props) => {
   return (
     <Grid component="main">
       <CssBaseline />
-      <Grid item xs={12}>
-        <Box display="flex" flexDirection="row">
-          {/* <MpPageHeader /> */}
 
-          <MpTestimonial />
-          <MpTestimonial />
+      <Grid item xs={12}>
+        <Box>
+          <MpPageHeader />
         </Box>
       </Grid>
       <Grid item xs={12}>
@@ -54,6 +53,13 @@ const GCard = (props) => {
         <Container>
           <Box>
             <MpVideo />
+          </Box>
+        </Container>
+      </Grid>
+      <Grid item xs={12}>
+        <Container>
+          <Box>
+            <MpTestimonials />
           </Box>
         </Container>
       </Grid>

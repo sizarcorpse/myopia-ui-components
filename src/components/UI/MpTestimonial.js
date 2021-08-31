@@ -7,39 +7,53 @@ import {
   Box,
   Typography,
   Link,
-  Avatar,
-  CardHeader
+  Avatar
 } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-
+    flex: "1 10 378.6px",
     gap: theme.spacing(2.5),
     padding: theme.spacing(4),
     margin: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
-    boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 8px",
+    backgroundColor: "#EDF1F6",
+    boxShadow: "rgba(0, 0, 0, 0.08) 0px 4px 12px;",
 
-    "& > img": {
-      width: 157,
-      height: 40
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(1)
+    },
+    [theme.breakpoints.down("md")]: {
+      flex: "1 1 320px"
+    },
+
+    "& a > img": {
+      width: "9.8125em",
+      height: "2.5em"
+    },
+
+    "& > p": {
+      maxWidth: "65ch"
     }
   },
+
   client: {
     display: "flex",
     alignItems: "center",
     gap: theme.spacing(2.5),
+
     "& > div": {
-      width: theme.spacing(7),
-      height: theme.spacing(7)
+      width: "4rem",
+      height: "4rem"
     },
 
     "& > p": {
       fontWeight: 600
     }
   },
-  position: {
+
+  clientPosition: {
     fontWeight: 500,
     marginLeft: theme.spacing(1),
     color: theme.palette.primary.main
@@ -47,38 +61,54 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MpTestimonial = (props) => {
-  const { icon, title } = props;
+  const {
+    testimonial: {
+      companyLogo,
+      conpanyWebsite,
+      testimoniContent,
+      clientName,
+      clientPosition,
+      clientPhoto,
+      clintProfileLink
+    }
+  } = props;
   const localClasses = useStyles();
   return (
     <Box className={localClasses.root}>
-      <img
-        alt=" "
-        src="https://images.prismic.io/myopia/d7739a68-3dd0-45a8-b6f5-b49264f7200e_logo1.png"
-        className={localClasses.media}
-      />
+      <Link href={conpanyWebsite}>
+        <img alt={conpanyWebsite} src={companyLogo} />
+      </Link>
+
       <Typography variant="body1" color="primary">
-        Our partnership with the Strapi team enables us to give more flexibility
-        and velocity to our product, marketing & customer care teams to manage
-        content on the platform.
+        {testimoniContent}
       </Typography>
+
       <Box className={localClasses.client}>
         <Avatar
-          src="https://images.prismic.io/myopia/088e3cc1-d8c4-4eee-b9d4-df3c7eaff3fd_person1.png"
-          className={localClasses.large}
+          alt={`${clientName} + ", " ${clientPosition}`}
+          src={clientPhoto}
         />
-        <Typography variant="body1" color="secondary">
-          Bradley Cooper{","}
-          <span className={localClasses.position}>Founder </span>
+        <Typography variant="body1">
+          <Link href={clintProfileLink} underline="none" color="secondary">
+            {clientName}
+          </Link>
+          {","}
+          <span className={localClasses.clientPosition}>{clientPosition} </span>
         </Typography>
       </Box>
     </Box>
   );
 };
 
-MpTestimonial.propTypes = {
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
-};
+// MpTestimonial.propTypes = {
+// companyLogo,
+// conpanyWebsite,
+// testimoniContent,
+// clientName,
+// clientPosition,
+// clientPhoto,
+// clintProfileLink
+// };
 
 export default withStyles(
   (theme) => ({
