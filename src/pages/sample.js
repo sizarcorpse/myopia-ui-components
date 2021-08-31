@@ -1,5 +1,6 @@
 import React from "react";
 
+import MpTestimonial from "../components/UI/MpTestimonial";
 //Componetns
 import MpPageHeader from "../components/sections/MpPageHeader";
 import MpIntroduction from "../components/sections/MpIntroduction";
@@ -21,8 +22,11 @@ const GCard = (props) => {
     <Grid component="main">
       <CssBaseline />
       <Grid item xs={12}>
-        <Box>
-          <MpPageHeader />
+        <Box display="flex" flexDirection="row">
+          {/* <MpPageHeader /> */}
+
+          <MpTestimonial />
+          <MpTestimonial />
         </Box>
       </Grid>
       <Grid item xs={12}>
