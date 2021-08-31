@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: (props) => (props.align ? props.align : "left"),
       [theme.breakpoints.down("xs")]: {
         fontSize: "4rem",
-        textAlign: "center"
+        textAlign: "center !important"
       },
       [theme.breakpoints.up("sm")]: {
         fontSize: "5rem"

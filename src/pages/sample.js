@@ -5,6 +5,7 @@ import MpPageHeader from "../components/sections/MpPageHeader";
 import MpIntroduction from "../components/sections/MpIntroduction";
 import MpTechnology from "../components/sections/MpTechnology";
 import MpServices from "../components/sections/MpServices";
+import MpVideo from "../components/sections/MpVideo";
 
 import {
   withStyles,
@@ -42,6 +43,13 @@ const GCard = (props) => {
         <Container>
           <Box>
             <MpServices />
+          </Box>
+        </Container>
+      </Grid>
+      <Grid item xs={12}>
+        <Container>
+          <Box>
+            <MpVideo />
           </Box>
         </Container>
       </Grid>

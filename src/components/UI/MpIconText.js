@@ -19,30 +19,45 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2.5),
     borderRadius: theme.shape.borderRadius,
     boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 8px",
+
     [theme.breakpoints.down("xs")]: {
-      margin: theme.spacing(1)
+      margin: theme.spacing(1),
+      justifyContent: "center",
+      height: "15.625rem !important",
+      maxWidth: "15.625rem !important",
+      width: "100% !important"
     },
+
     [theme.breakpoints.down("sm")]: {
       width: "9.9rem",
       height: "9.375rem",
       padding: theme.spacing(3),
       margin: theme.spacing(1.5)
     },
+
     "& p": {
       width: "15ch",
       textAlign: "center",
+      [theme.breakpoints.down("xs")]: {
+        width: "23ch",
+        fontSize: "1rem !important"
+      },
       [theme.breakpoints.down("sm")]: {
         fontSize: "0.85rem"
       }
     },
 
     "& img": {
+      [theme.breakpoints.down("xs")]: {
+        width: "75px !important"
+      },
       [theme.breakpoints.down("sm")]: {
         width: 45
       }
     }
   }
 }));
+
 const MpIconText = (props) => {
   const { icon, title } = props;
   const localClasses = useStyles();
