@@ -1,13 +1,6 @@
 import React from "react";
 
-import MpTestimonial from "../components/UI/MpTestimonial";
 //Componetns
-import MpPageHeader from "../components/sections/MpPageHeader";
-import MpIntroduction from "../components/sections/MpIntroduction";
-import MpTechnology from "../components/sections/MpTechnology";
-import MpServices from "../components/sections/MpServices";
-import MpVideo from "../components/sections/MpVideo";
-import MpTestimonials from "../components/sections/MpTestimonials";
 
 import {
   withStyles,
@@ -24,52 +17,15 @@ const GCard = (props) => {
       <CssBaseline />
 
       <Grid item xs={12}>
-        <Box>
-          <MpPageHeader />
-        </Box>
+        <Box></Box>
       </Grid>
       <Grid item xs={12}>
         <Container>
-          <Box>
-            <MpIntroduction />
-          </Box>
-        </Container>
-      </Grid>
-      <Grid item xs={12} style={{ backgroundColor: "#EDF1F6" }}>
-        <Container>
-          <Box>
-            <MpTechnology />
-          </Box>
-        </Container>
-      </Grid>
-      <Grid item xs={12}>
-        <Container>
-          <Box>
-            <MpServices />
-          </Box>
-        </Container>
-      </Grid>
-      <Grid item xs={12}>
-        <Container>
-          <Box>
-            <MpVideo />
-          </Box>
-        </Container>
-      </Grid>
-      <Grid item xs={12}>
-        <Container>
-          <Box>
-            <MpTestimonials />
-          </Box>
+          <Box></Box>
         </Container>
       </Grid>
     </Grid>
   );
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(GCard);
+export default withStyles((theme) => ({}), { withTheme: true })(GCard);

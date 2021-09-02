@@ -7,7 +7,10 @@ import Light from "./styles/Light";
 import Dark from "./styles/Dark";
 
 // #pages :
+import Navigation from "./components/sections/Navigation/Navigation";
 import sample from "./pages/sample";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 
 // #components :
 export default function App() {
@@ -15,8 +18,13 @@ export default function App() {
     <>
       <ThemeProvider theme={Light}>
         <Router>
-          <Route path="/" component={sample} />
-          <Switch></Switch>
+          <Route path="/" component={Navigation} />
+          {/* <Route path="/" component={sample} /> */}
+
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/about" exact component={AboutPage} />
+          </Switch>
         </Router>
       </ThemeProvider>
     </>

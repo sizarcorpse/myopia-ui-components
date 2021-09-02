@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { withStyles, makeStyles, Box, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    cursor: "pointer"
+  },
   sectionTitleMotto: {
     "& p": {
       fontFamily: '"Poppins","sans-serif"',

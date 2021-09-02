@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Home_Testimonials = (props) => {
+const HomeTestimonials = (props) => {
   const { width } = props;
   const localClasses = useStyles();
   const [data, setData] = useState([
@@ -188,5 +188,5 @@ export default withWidth()(
       // ...ThemeDistributor(theme)
     }),
     { withTheme: true }
-  )(Home_Testimonials)
+  )(HomeTestimonials)
 );

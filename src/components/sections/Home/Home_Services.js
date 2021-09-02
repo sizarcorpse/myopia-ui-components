@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const MpServices = (props) => {
+const HomeServices = (props) => {
   const { width } = props;
   const [data, setData] = useState([
     {
@@ -164,5 +164,5 @@ export default withWidth()(
       // ...ThemeDistributor(theme)
     }),
     { withTheme: true }
-  )(MpServices)
+  )(HomeServices)
 );

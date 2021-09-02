@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { isWebsiteUrl, isPhotoUrl } from "../../utils/isUrl";
 import {
   withStyles,
   makeStyles,
@@ -34,7 +34,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     "& > p": {
-      maxWidth: "65ch"
+      maxWidth: "65ch",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "0.875em"
+      }
     }
   },
 
@@ -44,19 +47,29 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2.5),
 
     "& > div": {
-      width: "4rem",
-      height: "4rem"
+      width: "3.5rem",
+      height: "3.5rem",
+      [theme.breakpoints.down("xs")]: {
+        width: "3rem",
+        height: "3rem"
+      }
     },
 
     "& > p": {
-      fontWeight: 600
+      fontWeight: 600,
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "0.875em"
+      }
     }
   },
 
   clientPosition: {
     fontWeight: 500,
     marginLeft: theme.spacing(1),
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.875em"
+    }
   }
 }));
 
@@ -73,9 +86,10 @@ const MpTestimonial = (props) => {
     }
   } = props;
   const localClasses = useStyles();
+
   return (
     <Box className={localClasses.root}>
-      <Link href={conpanyWebsite}>
+      <Link href={isWebsiteUrl(conpanyWebsite)}>
         <img alt={conpanyWebsite} src={companyLogo} />
       </Link>
 
@@ -86,10 +100,14 @@ const MpTestimonial = (props) => {
       <Box className={localClasses.client}>
         <Avatar
           alt={`${clientName} + ", " ${clientPosition}`}
-          src={clientPhoto}
+          src={isPhotoUrl(clientPhoto)}
         />
         <Typography variant="body1">
-          <Link href={clintProfileLink} underline="none" color="secondary">
+          <Link
+            href={isWebsiteUrl(clintProfileLink)}
+            underline="none"
+            color="secondary"
+          >
             {clientName}
           </Link>
           {","}
@@ -100,15 +118,17 @@ const MpTestimonial = (props) => {
   );
 };
 
-// MpTestimonial.propTypes = {
-// companyLogo,
-// conpanyWebsite,
-// testimoniContent,
-// clientName,
-// clientPosition,
-// clientPhoto,
-// clintProfileLink
-// };
+MpTestimonial.propTypes = {
+  testimonial: PropTypes.exact({
+    companyLogo: PropTypes.string.isRequired,
+    conpanyWebsite: PropTypes.string,
+    testimoniContent: PropTypes.string.isRequired,
+    clientName: PropTypes.string.isRequired,
+    clientPosition: PropTypes.string.isRequired,
+    clientPhoto: PropTypes.string.isRequired,
+    clintProfileLink: PropTypes.string
+  })
+};
 
 export default withStyles(
   (theme) => ({

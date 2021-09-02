@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Home_LearMore = (props) => {
+const HomeLearMore = (props) => {
   const {} = props;
   const localClasses = useStyles();
 
@@ -90,4 +90,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(Home_LearMore);
+)(HomeLearMore);

@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const HomeIntroduction = (props) => {
+const AboutIntroduction = (props) => {
   const {} = props;
   const localClasses = useStyles();
 
@@ -61,23 +61,20 @@ const HomeIntroduction = (props) => {
         <Box className={localClasses.introImageContent}>
           <img
             alt=""
-            src="https://images.prismic.io/myopia/98cba092-c24f-433d-9aa3-eeac72061ce1_locallyownedimage.png"
+            src="https://images.prismic.io/myopia/b143481b-5067-4c2f-92cc-057ef346a43c_About+us+radiologiest+section+img.png"
           />
         </Box>
       </Grid>
       <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
         <Box className={localClasses.introContent}>
-          <MpSectionTitle
-            motto="WE ARE"
-            title="Locally Owned and Operated."
-            align="left"
-          />
+          <MpSectionTitle motto="YOUR" title="Radiologists" align="left" />
 
           <Typography variant="body1" color="primary">
-            Our team of specialised radiologists, technicians and receptionists
-            across our two sites are committed to providing patients and their
-            referring clinicians with the highest standards of care in our
-            modern, professional, and comfortable environments.
+            Our Radiologists and staff are friendly, highly skilled and
+            dedicated to providing a professional stress free environment along
+            with exceptional service to both patients and referring clinicians
+            alike. We are an independently owned, non corporate radiology group
+            which Bulk Bills most examinations.
           </Typography>
           <MpButton varient="primary" linkTo="/services">
             Choose Service
@@ -93,4 +90,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(HomeIntroduction);
+)(AboutIntroduction);

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       justifyContent: "center",
       height: "15.625rem !important",
-      maxWidth: "15.625rem !important",
+      // maxWidth: "15.625rem !important",
       width: "100% !important"
     },
 
