@@ -1,7 +1,7 @@
 import React from "react";
 
-import MpButton from "../UI/MpButton";
-import MpSectionTitle from "../UI/MpSectionTitle";
+import MpButton from "../../UI/MpButton";
+import MpSectionTitle from "../../UI/MpSectionTitle";
 import {
   withStyles,
   makeStyles,
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MpIntroduction = (props) => {
+const Home_Introduction = (props) => {
   const {} = props;
   const localClasses = useStyles();
 
@@ -94,4 +94,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(MpIntroduction);
+)(Home_Introduction);

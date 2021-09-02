@@ -1,7 +1,7 @@
 import React from "react";
 
-import MpPageHeaderTitle from "../UI/MpPageHeaderTitle";
-import MpButton from "../UI/MpButton";
+import MpPageHeaderTitle from "../../UI/MpPageHeaderTitle";
+import MpButton from "../../UI/MpButton";
 import {
   withStyles,
   makeStyles,
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MpPageHeader = (props) => {
+const Home_Header = (props) => {
   const {} = props;
   const localClasses = useStyles();
   return (
@@ -84,4 +84,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(MpPageHeader);
+)(Home_Header);

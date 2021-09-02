@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import MpSectionTitle from "../UI/MpSectionTitle";
-import MpIconText from "../UI/MpIconText";
+import MpSectionTitle from "../../UI/MpSectionTitle";
+import MpIconText from "../../UI/MpIconText";
 import {
   withStyles,
   makeStyles,

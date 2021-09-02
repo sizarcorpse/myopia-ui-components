@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MpIconBox from "../UI/MpIconBox";
+import MpIconBox from "../../UI/MpIconBox";
 import {
   withStyles,
   makeStyles,
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Mptechnology = (props) => {
+const Home_Technology = (props) => {
   const {} = props;
   const [data, setData] = useState([
     {
@@ -166,4 +166,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(Mptechnology);
+)(Home_Technology);

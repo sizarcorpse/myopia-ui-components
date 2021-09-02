@@ -1,7 +1,7 @@
 import React from "react";
 
-import MpButton from "../UI/MpButton";
-import MpSectionTitle from "../UI/MpSectionTitle";
+import MpButton from "../../UI/MpButton";
+import MpSectionTitle from "../../UI/MpSectionTitle";
 import {
   withStyles,
   makeStyles,
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MpVideo = (props) => {
+const Home_LearMore = (props) => {
   const {} = props;
   const localClasses = useStyles();
 
@@ -90,4 +90,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(MpVideo);
+)(Home_LearMore);

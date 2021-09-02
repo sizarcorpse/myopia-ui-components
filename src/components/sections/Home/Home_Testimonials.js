@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import MpSectionTitle from "../UI/MpSectionTitle";
-import MpTestimonial from "../UI/MpTestimonial";
+import MpSectionTitle from "../../UI/MpSectionTitle";
+import MpTestimonial from "../../UI/MpTestimonial";
 import {
   withStyles,
   makeStyles,
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const MpTestimonials = (props) => {
+const Home_Testimonials = (props) => {
   const { width } = props;
   const localClasses = useStyles();
   const [data, setData] = useState([
@@ -129,7 +129,7 @@ const MpTestimonials = (props) => {
           />
 
           <Box className={localClasses.servicesItems} width="100%">
-            {width === "xs" ? (
+            {width === "sm" || width === "xs" ? (
               <Box
                 maxWidth="100%"
                 height="auto"
@@ -149,7 +149,8 @@ const MpTestimonials = (props) => {
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
-                      width="100%"
+                      maxWidth={{ xs: "100%", sm: "calc(100% - 60px)" }}
+                      style={{ margin: "auto" }}
                     >
                       {Math.abs(activeStep - index) <= 2 ? (
                         <MpTestimonial testimonial={item} />
@@ -187,5 +188,5 @@ export default withWidth()(
       // ...ThemeDistributor(theme)
     }),
     { withTheme: true }
-  )(MpTestimonials)
+  )(Home_Testimonials)
 );
