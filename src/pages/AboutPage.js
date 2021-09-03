@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-import MpTeam from "../components/UI/MpTeam";
 //Componetns
 import AboutHeader from "../components/sections/About/About_Header";
 import AboutIntroduction from "../components/sections/About/About_Introduction";
+import AboutTeam from "../components/sections/About/About_Team";
 import {
   withStyles,
   Box,
@@ -26,9 +26,14 @@ const AboutPage = (props) => {
       <Grid item xs={12}>
         <Container>
           <Box>
-            {/* <AboutIntroduction /> */}
-            <MpTeam />
+            {" "}
+            <AboutIntroduction />{" "}
           </Box>
+        </Container>
+      </Grid>
+      <Grid item xs={12} style={{ backgroundColor: "#EDF1F6" }}>
+        <Container>
+          <AboutTeam />
         </Container>
       </Grid>
     </Grid>
