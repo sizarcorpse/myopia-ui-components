@@ -96,6 +96,45 @@ light.overrides = {
         backgroundColor: "#396dab"
       }
     }
+  },
+
+  MuiInputLabel: {
+    root: {
+      top: 0,
+      color: light.palette.primary.main,
+      fontSize: light.typography.body1.fontSize,
+      "&$focused": {
+        color: light.palette.secondary.main
+      }
+    },
+    outlined: {
+      transform: "translate(14px, 14px) scale(1)"
+    }
+  },
+  MuiOutlinedInput: {
+    root: {
+      maxHeight: 44,
+      "& fieldset": {
+        borderColor: light.palette.primary.main
+      },
+      "&:hover": {
+        "& fieldset.MuiOutlinedInput-notchedOutline": {
+          borderColor: light.palette.secondary.main
+        }
+      },
+      "&$focused": {
+        "& fieldset.MuiOutlinedInput-notchedOutline": {
+          borderColor: light.palette.secondary.main
+        }
+      }
+    }
+  },
+  MuiSelect: {
+    select: {
+      "&:focus": {
+        backgroundColor: "none"
+      }
+    }
   }
 };
 

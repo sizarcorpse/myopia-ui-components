@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
-    gap: theme.spacing(5)
+    gap: theme.spacing(2.5)
   }
 }));
 
@@ -62,7 +62,7 @@ const AboutTeam = (props) => {
       <Grid item xs={12}>
         <Box className={localClasses.teamMembers}>
           {data.map((item, i) => (
-            <MpTeam team={item} />
+            <MpTeam key={i} team={item} />
           ))}
         </Box>
       </Grid>

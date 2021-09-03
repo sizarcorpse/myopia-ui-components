@@ -54,7 +54,7 @@ const HomeServices = (props) => {
     {
       icon:
         "https://myopia.cdn.prismic.io/myopia/2d37021a-d471-4ac2-b463-d6698cdd64bf_dental_icon.svg",
-      title: "Dental  Imaging"
+      title: "Dental Imaging"
     },
     {
       icon:
@@ -74,7 +74,7 @@ const HomeServices = (props) => {
     {
       icon:
         "https://myopia.cdn.prismic.io/myopia/bc4e79d5-6e82-426a-9510-1eaa2c5080a1_cardiac+CT.svg",
-      title: "Cardiac  CT"
+      title: "Cardiac CT"
     },
     {
       icon:

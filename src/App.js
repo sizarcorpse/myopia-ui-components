@@ -6,7 +6,7 @@ import { ThemeProvider } from "@material-ui/core";
 import Light from "./styles/Light";
 import Dark from "./styles/Dark";
 
-// #pages :
+// #pages
 import Navigation from "./components/sections/Navigation/Navigation";
 import sample from "./pages/sample";
 import HomePage from "./pages/HomePage";
@@ -18,11 +18,11 @@ export default function App() {
     <>
       <ThemeProvider theme={Light}>
         <Router>
-          <Route path="/" component={Navigation} />
-          {/* <Route path="/" component={sample} /> */}
+          {/* <Route path="/" component={Navigation} /> */}
 
           <Switch>
-            <Route path="/" exact component={HomePage} />
+            {/* <Route path="/" exact component={HomePage} /> */}
+            <Route path="/" component={sample} />
             <Route path="/about" exact component={AboutPage} />
           </Switch>
         </Router>

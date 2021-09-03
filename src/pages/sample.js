@@ -1,5 +1,5 @@
 import React from "react";
-
+import ContactUs from "../components/Form/From";
 //Componetns
 
 import {
@@ -17,12 +17,9 @@ const GCard = (props) => {
       <CssBaseline />
 
       <Grid item xs={12}>
-        <Box></Box>
-      </Grid>
-      <Grid item xs={12}>
-        <Container>
-          <Box></Box>
-        </Container>
+        <Box>
+          <ContactUs />
+        </Box>
       </Grid>
     </Grid>
   );
