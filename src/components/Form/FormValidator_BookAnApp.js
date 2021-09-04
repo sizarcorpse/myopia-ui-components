@@ -23,15 +23,13 @@ export const validationSchema = Yup.object({
     .lowercase()
     .required("Email can not be empty"),
   service: Yup.string()
-    .nullable()
     .matches(
       /(General X-Ray|Ultrasound|CT Scan|Interventional Procedures|Dental Imaging|Women's Imaging|Musculoskeletal Imaging|Pregnancy Imaging|Cardiac CT|Shear Wave Elastography|Alcium Scoring|BDM)/,
       "Do what it says"
     )
     .required("You Must Have Sector"),
   location: Yup.string()
-    .nullable()
-    .matches(/(Velen | Novigrad)/, "Do what it says")
+    .matches(/(Velen|Novigrad)/, "Do what it says")
     .required("You Must Have Sector"),
   contactMessage: Yup.string()
     .min(5, "Please Enter A Valid Email")
