@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   locationContent: {
     [theme.breakpoints.down("md")]: {
-      maxWidth: 600,
+      maxWidth: "37.5rem",
       width: "100%",
       margin: "auto"
     },
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column"
     },
     [theme.breakpoints.down("md")]: {
-      maxWidth: 600,
+      maxWidth: "37.5rem",
       width: "100%",
       justifyContent: "space-between"
     }
@@ -108,7 +108,7 @@ const ContactReachUs = (props) => {
               <MpAddress location={item} key={i} />
             ))}
           </Box>
-          <Box maxHeight="350px" height="100%" width="100%">
+          <Box maxHeight="440px" height="100%" width="100%">
             <Lottie
               options={defaultOptions}
               height={"inherit"}
@@ -126,9 +126,4 @@ const ContactReachUs = (props) => {
   );
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(ContactReachUs);
+export default withStyles((theme) => ({}), { withTheme: true })(ContactReachUs);

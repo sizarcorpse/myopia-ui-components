@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { validationSchema } from "./FormValidator_BookAnApp";
+
 import MpButton from "../UI/MpButton";
 import {
   FormControl,
@@ -144,7 +145,7 @@ const BookAnAppointmentFormBase = (props) => {
 
           return (
             <Form>
-              <Grid container spacing={width === "xs" ? 1 : 3}>
+              <Grid container spacing={width === "xs" ? 2 : 3}>
                 <Grid item xs={12}>
                   <FormControl fullWidth>
                     <TextField

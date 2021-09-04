@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(2.5, 0),
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.h5.fontSize
+      },
+      [theme.breakpoints.only("sm")]: {
+        fontSize: "1.5rem"
       }
     }
   }
@@ -55,9 +58,4 @@ MpAddress.propTypes = {
   })
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(MpAddress);
+export default withStyles((theme) => ({}), { withTheme: true })(MpAddress);

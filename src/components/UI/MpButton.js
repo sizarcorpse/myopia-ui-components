@@ -4,7 +4,7 @@ import Proptypes from "prop-types";
 import { withStyles, Button, Link } from "@material-ui/core";
 
 const MpButton = (props) => {
-  const { children, varient, linkTo } = props;
+  const { children, varient, linkTo, type } = props;
 
   return (
     <Link href={linkTo} underline="none">
@@ -17,6 +17,7 @@ const MpButton = (props) => {
             ? "secondary"
             : "primary"
         }
+        type={type === "submit" ? "submit" : ""}
       >
         {children}
       </Button>
@@ -30,7 +31,8 @@ MpButton.defaultProps = {
 MpButton.propTypes = {
   children: Proptypes.node.isRequired,
   varient: Proptypes.oneOf(["primary", "secondary"]),
-  linkTo: Proptypes.string
+  linkTo: Proptypes.string,
+  type: Proptypes.oneOf(["submit"])
 };
 
 export default withStyles(

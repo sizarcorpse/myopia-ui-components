@@ -3,7 +3,7 @@ import BookAnAppointmentFormBase from "../Form/FormBase_BookAnApp";
 import { withStyles, makeStyles, Box, Typography } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 600,
+    maxWidth: "37.5rem",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -17,11 +17,13 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2.5)
     },
 
-    "& p": {},
     "& h4": {
       textAlign: "center",
       [theme.breakpoints.down("xs")]: {
-        fontSize: "1.2rem"
+        fontSize: theme.typography.h5.fontSize
+      },
+      [theme.breakpoints.only("sm")]: {
+        fontSize: "1.5rem"
       }
     }
   }
@@ -40,13 +42,5 @@ const MpBookAnApp = (props) => {
     </Box>
   );
 };
-
-// MpBookAnApp.propTypes = {
-//   item: PropTypes.exact({
-//     icon: PropTypes.string,
-//     title: PropTypes.string,
-//     description: PropTypes.string
-//   })
-// };
 
 export default withStyles((theme) => ({}), { withTheme: true })(MpBookAnApp);

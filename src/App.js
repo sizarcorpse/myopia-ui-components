@@ -11,6 +11,7 @@ import Navigation from "./components/sections/Navigation/Navigation";
 import sample from "./pages/sample";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import ContactUsPage from "./pages/ContactUsPage";
 
 // #components :
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
             {/* <Route path="/" exact component={HomePage} /> */}
             <Route path="/" component={sample} />
             <Route path="/about" exact component={AboutPage} />
+            <Route path="/contact" exact component={ContactUsPage} />
           </Switch>
         </Router>
       </ThemeProvider>

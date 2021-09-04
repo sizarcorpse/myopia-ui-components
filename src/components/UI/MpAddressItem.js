@@ -66,9 +66,4 @@ MpAddressItem.propTypes = {
   type: Proptypes.oneOf(["phone", "email", "fax", "adddress"])
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(MpAddressItem);
+export default withStyles((theme) => ({}), { withTheme: true })(MpAddressItem);

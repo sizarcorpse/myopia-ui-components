@@ -61,7 +61,7 @@ const Navigation = (props) => {
                   <Link to={"/about"}> About </Link>
                 </Typography>
                 <Typography variant="body1">
-                  <Link to=""> Contact </Link>
+                  <Link to="/contact"> Contact </Link>
                 </Typography>
               </Box>
             </Hidden>
