@@ -32,7 +32,7 @@ const PatientInformation = (props) => {
           <MpSectionTitle
             motto="RECEIVE"
             title="Patient Information"
-            align="left"
+            align="center"
           />
           <Box my={5}>
             <MpVerticalIconTab />

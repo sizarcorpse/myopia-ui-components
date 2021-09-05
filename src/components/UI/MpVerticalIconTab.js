@@ -9,7 +9,6 @@ import {
   Box,
   withWidth
 } from "@material-ui/core";
-import { Height } from "@material-ui/icons";
 
 let data = [
   {
@@ -67,34 +66,52 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     display: "flex",
+    justifyContent: "center",
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column"
     }
   },
   tabs: {
-    padding: 0,
+    // padding: theme.spacing(0, 2.5),
+    alignItems: "center",
     "& .MuiTab-root": {
-      paddingRight: theme.spacing(5),
       margin: theme.spacing(1, 0),
       minWidth: "auto",
       [theme.breakpoints.down("xs")]: {
-        paddingRight: theme.spacing(0)
+        padding: theme.spacing(0)
       },
       "& > span > img": {
         [theme.breakpoints.down("xs")]: {
           width: 65
+        },
+        [theme.breakpoints.only("sm")]: {
+          width: 75
         }
       }
     },
-    "& .PrivateTabIndicator-root-24": {
-      Height: 89
+    "& .MuiTab-textColorInherit.Mui-selected": {
+      opacity: 1
+    },
+    "& .MuiTab-textColorInherit": {
+      opacity: 0.5
+    },
+    "& .MuiTabs-flexContainer": {
+      [theme.breakpoints.only("xs")]: {
+        justifyContent: "space-around"
+      }
     }
   },
   tabContent: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(0)
+    },
     "& > p": {
       maxWidth: "70ch",
       whiteSpace: "pre-wrap",
-      margin: theme.spacing(2.5)
+      margin: theme.spacing(2.5),
+      [theme.breakpoints.only("xs")]: {
+        textAlign: "center"
+      }
     }
   }
 }));
@@ -116,7 +133,11 @@ const MpVerticalIconTab = (props) => {
         value={value}
         onChange={handleChange}
         className={localClasses.tabs}
-        indicatorColor="secondary"
+        TabIndicatorProps={{
+          style: {
+            display: "none"
+          }
+        }}
       >
         <Tab
           disableRipple
