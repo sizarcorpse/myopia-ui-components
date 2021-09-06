@@ -2,13 +2,7 @@ import React from "react";
 
 import MpVerticalIconTab from "../../UI/MpVerticalIconTab";
 import MpSectionTitle from "../../UI/MpSectionTitle";
-import {
-  withStyles,
-  makeStyles,
-  Grid,
-  Box,
-  Typography
-} from "@material-ui/core";
+import { withStyles, makeStyles, Grid, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -49,12 +49,6 @@ function TabPanel(props) {
   );
 }
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
-};
-
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
@@ -216,16 +210,16 @@ const MpVerticalIconTab = (props) => {
       <TabPanel value={value} index={2}>
         <Box className={localClasses.tabContent}>
           <Typography variant="body1" color="primary">
+            Instructions will be provided to you by our receptionists when
+            making your appointment. More information about the range of
+            examinations is also available under services.
+          </Typography>
+          <Typography variant="body1" color="primary">
             At Vision Radiology we take a patient focused approach to ensure our
             patients are well looked after and informed from the time the
             appointment is made. The majority of reports will be available to
             your GP or Health Care Provider within the first 24 hours of you
             leaving Vision Radiology.
-          </Typography>
-          <Typography variant="body1" color="primary">
-            Instructions will be provided to you by our receptionists when
-            making your appointment. More information about the range of
-            examinations is also available under services.
           </Typography>
           <Typography variant="body1" color="primary">
             We understand many patients may be anxious at the time of illness
@@ -267,6 +261,12 @@ const MpVerticalIconTab = (props) => {
       </TabPanel>
     </div>
   );
+};
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired
 };
 
 export default withWidth()(

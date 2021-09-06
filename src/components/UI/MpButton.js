@@ -1,13 +1,13 @@
 import React from "react";
 import Proptypes from "prop-types";
-
-import { withStyles, Button, Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { withStyles, Button } from "@material-ui/core";
 
 const MpButton = (props) => {
   const { children, varient, linkTo, type } = props;
 
   return (
-    <Link href={linkTo} underline="none">
+    <Link to={linkTo} style={{ textDecoration: "none" }}>
       <Button
         variant={varient === "primary" ? "contained" : "contained"}
         color={
