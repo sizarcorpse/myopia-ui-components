@@ -5,7 +5,12 @@ import { withStyles, makeStyles, Box, Typography } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: (props) =>
+      props.variant === "leftIcon"
+        ? "row"
+        : props.variant === "topIcon"
+        ? "column"
+        : "column",
     justifyContent: "flex-start",
     gap: theme.spacing(2.5),
     [theme.breakpoints.down("xs")]: {
@@ -36,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 const MpIconBox = (props) => {
-  const { item } = props;
-  const localClasses = useStyles();
+  const { item, variant } = props;
+  const localClasses = useStyles({ variant });
   return (
     <Box className={localClasses.root}>
       <img alt="hi" src={item.icon} />
@@ -58,12 +63,8 @@ MpIconBox.propTypes = {
     icon: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string
-  })
+  }),
+  variant: PropTypes.oneOf(["leftIcon", "topIcon"]).isRequired
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(MpIconBox);
+export default withStyles((theme) => ({}), { withTheme: true })(MpIconBox);

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MpSectionTitle from "../../UI/MpSectionTitle";
 import MpIconText from "../../UI/MpIconText";
+import MpSlide from "../../UI/MpSlider";
 import {
   withStyles,
   makeStyles,
@@ -116,38 +117,40 @@ const HomeServices = (props) => {
 
           <Box className={localClasses.servicesItems} width="100%">
             {width === "xs" ? (
-              <Box
-                maxWidth="100%"
-                height="auto"
-                display="flex"
-                justifyContent="center"
-                flexGrow={1}
-              >
-                <AutoPlaySwipeableViews
-                  axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                  index={activeStep}
-                  onChangeIndex={handleStepChange}
-                  enableMouseEvents
-                >
-                  {data.map((item, index) => (
-                    <Box
-                      key={item.label}
-                      display="flex"
-                      justifyContent="center"
-                      alignItems="center"
-                      width="100%"
-                    >
-                      {Math.abs(activeStep - index) <= 2 ? (
-                        <MpIconText icon={item.icon} title={item.title} />
-                      ) : null}
-                    </Box>
-                  ))}
-                </AutoPlaySwipeableViews>
-              </Box>
+              // <Box
+              //   maxWidth="100%"
+              //   height="auto"
+              //   display="flex"
+              //   justifyContent="center"
+              //   flexGrow={1}
+              // >
+              //   <AutoPlaySwipeableViews
+              //     axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              //     index={activeStep}
+              //     onChangeIndex={handleStepChange}
+              //     enableMouseEvents
+              //   >
+              //     {data.map((item, index) => (
+              //       <Box
+              //         key={item.label}
+              //         display="flex"
+              //         justifyContent="center"
+              //         alignItems="center"
+              //         width="100%"
+              //       >
+              //         {Math.abs(activeStep - index) <= 2 ? (
+              //           <MpIconText icon={item.icon} title={item.title} />
+              //         ) : null}
+              //       </Box>
+              //     ))}
+              //   </AutoPlaySwipeableViews>
+              // </Box>
+
+              <MpSlide data={data} compo={<MpIconText />} />
             ) : (
               <>
                 {data.map((item, i) => (
-                  <MpIconText key={i} icon={item.icon} title={item.title} />
+                  <MpIconText key={i} item={item} />
                 ))}
               </>
             )}

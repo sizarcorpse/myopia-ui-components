@@ -59,21 +59,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MpIconText = (props) => {
-  const { icon, title } = props;
+  const { item } = props;
   const localClasses = useStyles();
   return (
     <Box className={localClasses.root}>
-      <img alt="" src={icon} />
+      <img alt="" src={item.icon} />
       <Link href="" underline="none">
-        <Typography variant="body1">{title}</Typography>
+        <Typography variant="body1">{item.title}</Typography>
       </Link>
     </Box>
   );
 };
 
 MpIconText.propTypes = {
-  icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  item: PropTypes.exact({
+    icon: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })
 };
 
 export default withStyles(

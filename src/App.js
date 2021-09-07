@@ -13,7 +13,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import PatientsPage from "./pages/PatientsPage";
-
+import ServicesPage from "./pages/ServicesPage";
 // #components :
 export default function App() {
   return (
@@ -28,6 +28,7 @@ export default function App() {
             <Route path="/about" exact component={AboutPage} />
             <Route path="/contact" exact component={ContactUsPage} />
             <Route path="/patients" exact component={PatientsPage} />
+            <Route path="/services" exact component={ServicesPage} />
           </Switch>
         </Router>
       </ThemeProvider>

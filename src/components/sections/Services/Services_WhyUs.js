@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const HomeTechnology = (props) => {
+const ServicesWhyUs = (props) => {
   const {} = props;
   const [data, setData] = useState([
     {
@@ -166,4 +166,4 @@ export default withStyles(
     // ...ThemeDistributor(theme)
   }),
   { withTheme: true }
-)(HomeTechnology);
+)(ServicesWhyUs);
