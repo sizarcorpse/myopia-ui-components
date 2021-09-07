@@ -90,28 +90,28 @@ const ServicesWhyUs = (props) => {
   const [data, setData] = useState([
     {
       icon:
-        "https://images.prismic.io/myopia/a70eede9-d26d-48f0-9a8e-99de4e37cb9e_reliable_icon.png",
-      title: "Reliable & Efficient",
+        "https://images.prismic.io/myopia/87882026-2ec4-4f5f-9abc-9e46ca7eb042_89.png",
+      title: "Qualifierd doctors",
       description:
         "Reliable & EfficientFrom paediatric to bariatric, whether complex or routine, it is designed and automated to deliver high quality data."
     },
     {
       icon:
-        "https://images.prismic.io/myopia/ec0382c7-5673-425a-81f1-ed8af4db49b3_low+dose_icon.png",
-      title: "Ultra low-dose imaging",
+        "https://images.prismic.io/myopia/9c4b6b73-5123-432f-99d0-27b265b7de8c_004.png",
+      title: "Online enrollment",
       description:
         "Utilising PUREVision technology to improve imaging efficiency with up to 31% less dose."
     },
     {
       icon:
-        "https://images.prismic.io/myopia/6504136d-db58-47b5-9ea2-304148b02d9f_Adaptive_icon.png",
-      title: "Adaptive Technology",
+        "https://images.prismic.io/myopia/9170734e-42c9-4d38-af23-2954dcf8df02_002.png",
+      title: "Free consultation",
       description: "Simplified workflow providing consistent quality results."
     },
     {
       icon:
-        "https://images.prismic.io/myopia/26e47453-a559-4f75-a72f-d185f8a21ec3_AI_icon.png",
-      title: "AICE",
+        "https://images.prismic.io/myopia/ef7d4568-7469-4473-9674-fd392006ef74_003.png",
+      title: "Mordern facilities",
       description:
         "Ultra low dose CT with the worlds first artificial intelligence AiCE assisted CT producing higher quality diagnostic images."
     }
@@ -127,12 +127,12 @@ const ServicesWhyUs = (props) => {
       <Grid item xl={7} lg={7} md={10} sm={12} xs={12}>
         <Box className={localClasses.technoloyContent}>
           <Typography variant="body1" color="secondary">
-            State-of-the-art
+            Why us?
           </Typography>
 
           <Box className={localClasses.technologyTitle}>
             <Typography variant="h2" color="primary">
-              Technology
+              Myopia are pleased to offer you the chance to have the healthy.{" "}
             </Typography>
             <Typography variant="body1" color="primary">
               Vision Radiology uses the best CT technology on the market, Canon
@@ -143,7 +143,7 @@ const ServicesWhyUs = (props) => {
           <Box className={localClasses.technologyItems}>
             {data.map((item, i) => (
               <Box key={i} className={localClasses.technologyItem}>
-                <MpIconBox item={item} variant="topIcon" />
+                <MpIconBox item={item} variant="leftIcon" />
               </Box>
             ))}
           </Box>

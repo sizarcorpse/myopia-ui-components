@@ -6,13 +6,15 @@ import animationData from "../../../assets/animation";
 import MpSectionTitle from "../../UI/MpSectionTitle";
 import MpBookAnAppointmenet from "../../UI/MpBookAnAppointment";
 import MpAddress from "../../UI/MpAddress";
+import MpSlider from "../../UI/MpSlider";
 
 import {
   withStyles,
   makeStyles,
   Grid,
   Box,
-  Typography
+  Typography,
+  withWidth
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +74,7 @@ let locations = [
 ];
 
 const ContactReachUs = (props) => {
-  const {} = props;
+  const { width } = props;
   const localClasses = useStyles();
 
   const defaultOptions = {
@@ -104,9 +106,11 @@ const ContactReachUs = (props) => {
           </Typography>
 
           <Box className={localClasses.locations}>
-            {locations.map((item, i) => (
-              <MpAddress location={item} key={i} />
-            ))}
+            <MpSlider
+              data={locations}
+              mpComopnent={<MpAddress />}
+              align="left"
+            />
           </Box>
           <Box maxHeight="440px" height="100%" width="100%">
             <Lottie
@@ -126,4 +130,6 @@ const ContactReachUs = (props) => {
   );
 };
 
-export default withStyles((theme) => ({}), { withTheme: true })(ContactReachUs);
+export default withWidth()(
+  withStyles((theme) => ({}), { withTheme: true })(ContactReachUs)
+);

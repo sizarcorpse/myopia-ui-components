@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const MpAddress = (props) => {
   const {
-    location: { nameOfLocation, phoneNumber, faxNumber, email, address }
+    item: { nameOfLocation, phoneNumber, faxNumber, email, address }
   } = props;
   const localClasses = useStyles();
   return (
@@ -43,7 +43,7 @@ const MpAddress = (props) => {
 };
 
 MpAddress.propTypes = {
-  location: PropTypes.exact({
+  item: PropTypes.exact({
     nameOfLocation: PropTypes.string,
     phoneNumber: PropTypes.exact({
       label: PropTypes.string,

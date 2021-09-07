@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MpTestimonial = (props) => {
   const {
-    testimonial: {
+    item: {
       companyLogo,
       conpanyWebsite,
       testimoniContent,
@@ -119,7 +119,7 @@ const MpTestimonial = (props) => {
 };
 
 MpTestimonial.propTypes = {
-  testimonial: PropTypes.exact({
+  item: PropTypes.exact({
     companyLogo: PropTypes.string.isRequired,
     conpanyWebsite: PropTypes.string,
     testimoniContent: PropTypes.string.isRequired,

@@ -7,11 +7,8 @@ import {
   makeStyles,
   Grid,
   Box,
-  useTheme,
   withWidth
 } from "@material-ui/core";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5)
   }
 }));
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const HomeServices = (props) => {
   const { width } = props;
@@ -94,12 +89,7 @@ const HomeServices = (props) => {
     }
   ]);
   const localClasses = useStyles();
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
 
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
   return (
     <Grid
       container
@@ -117,36 +107,7 @@ const HomeServices = (props) => {
 
           <Box className={localClasses.servicesItems} width="100%">
             {width === "xs" ? (
-              // <Box
-              //   maxWidth="100%"
-              //   height="auto"
-              //   display="flex"
-              //   justifyContent="center"
-              //   flexGrow={1}
-              // >
-              //   <AutoPlaySwipeableViews
-              //     axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-              //     index={activeStep}
-              //     onChangeIndex={handleStepChange}
-              //     enableMouseEvents
-              //   >
-              //     {data.map((item, index) => (
-              //       <Box
-              //         key={item.label}
-              //         display="flex"
-              //         justifyContent="center"
-              //         alignItems="center"
-              //         width="100%"
-              //       >
-              //         {Math.abs(activeStep - index) <= 2 ? (
-              //           <MpIconText icon={item.icon} title={item.title} />
-              //         ) : null}
-              //       </Box>
-              //     ))}
-              //   </AutoPlaySwipeableViews>
-              // </Box>
-
-              <MpSlide data={data} compo={<MpIconText />} />
+              <MpSlide data={data} mpComopnent={<MpIconText />} />
             ) : (
               <>
                 {data.map((item, i) => (
@@ -162,10 +123,5 @@ const HomeServices = (props) => {
 };
 
 export default withWidth()(
-  withStyles(
-    (theme) => ({
-      // ...ThemeDistributor(theme)
-    }),
-    { withTheme: true }
-  )(HomeServices)
+  withStyles((theme) => ({}), { withTheme: true })(HomeServices)
 );

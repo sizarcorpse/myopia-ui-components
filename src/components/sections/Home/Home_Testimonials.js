@@ -2,19 +2,14 @@ import React, { useState } from "react";
 
 import MpSectionTitle from "../../UI/MpSectionTitle";
 import MpTestimonial from "../../UI/MpTestimonial";
+import MpSlide from "../../UI/MpSlider";
 import {
   withStyles,
   makeStyles,
   Grid,
   Box,
-  useTheme,
   withWidth
 } from "@material-ui/core";
-
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -107,12 +102,6 @@ const HomeTestimonials = (props) => {
     }
   ]);
 
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
   return (
     <Grid
       container
@@ -130,35 +119,7 @@ const HomeTestimonials = (props) => {
 
           <Box className={localClasses.servicesItems} width="100%">
             {width === "sm" || width === "xs" ? (
-              <Box
-                maxWidth="100%"
-                height="auto"
-                display="flex"
-                justifyContent="center"
-                flexGrow={1}
-              >
-                <AutoPlaySwipeableViews
-                  axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                  index={activeStep}
-                  onChangeIndex={handleStepChange}
-                  enableMouseEvents
-                >
-                  {data.map((item, index) => (
-                    <Box
-                      key={item.label}
-                      display="flex"
-                      justifyContent="center"
-                      alignItems="center"
-                      maxWidth={{ xs: "100%", sm: "calc(100% - 60px)" }}
-                      style={{ margin: "auto" }}
-                    >
-                      {Math.abs(activeStep - index) <= 2 ? (
-                        <MpTestimonial testimonial={item} />
-                      ) : null}
-                    </Box>
-                  ))}
-                </AutoPlaySwipeableViews>
-              </Box>
+              <MpSlide data={data} mpComopnent={<MpTestimonial />} />
             ) : (
               <Box
                 // ! fix this mess
@@ -171,7 +132,7 @@ const HomeTestimonials = (props) => {
                 }}
               >
                 {data.map((item, i) => (
-                  <MpTestimonial key={i} testimonial={item} />
+                  <MpTestimonial key={i} item={item} />
                 ))}
               </Box>
             )}
@@ -183,10 +144,5 @@ const HomeTestimonials = (props) => {
 };
 
 export default withWidth()(
-  withStyles(
-    (theme) => ({
-      // ...ThemeDistributor(theme)
-    }),
-    { withTheme: true }
-  )(HomeTestimonials)
+  withStyles((theme) => ({}), { withTheme: true })(HomeTestimonials)
 );

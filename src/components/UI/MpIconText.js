@@ -59,13 +59,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MpIconText = (props) => {
-  const { item } = props;
+  const {
+    item: { icon, title }
+  } = props;
   const localClasses = useStyles();
   return (
     <Box className={localClasses.root}>
-      <img alt="" src={item.icon} />
+      <img alt="" src={icon} />
       <Link href="" underline="none">
-        <Typography variant="body1">{item.title}</Typography>
+        <Typography variant="body1">{title}</Typography>
       </Link>
     </Box>
   );

@@ -5,7 +5,6 @@ import MobileStepper from "@material-ui/core/MobileStepper";
 import {
   withStyles,
   makeStyles,
-  Grid,
   Box,
   useTheme,
   withWidth
@@ -22,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
       gap: 3
     },
     "& .MuiMobileStepper-dot": {
-      transition: "all 250ms ease-out 0ms"
+      transition: "all 250ms ease-out 0ms",
+      transform: "scale(1)"
     },
     "& .MuiMobileStepper-dot.MuiMobileStepper-dotActive": {
       transform: "scale(2)",
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const MpSlider = (props) => {
-  const { width, data, compo } = props;
+  const { width, data, mpComopnent, align } = props;
   const localClasses = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
@@ -64,12 +64,15 @@ const MpSlider = (props) => {
           <Box
             key={item.index}
             display="flex"
-            justifyContent="center"
+            justifyContent={
+              (align === "left" && "flex-start") ||
+              (align === "center" && "center")
+            }
             alignItems="center"
             width="100%"
           >
             {Math.abs(activeStep - index) <= 2
-              ? cloneElement(compo, { item: item })
+              ? cloneElement(mpComopnent, { item: item }, null)
               : null}
           </Box>
         ))}
