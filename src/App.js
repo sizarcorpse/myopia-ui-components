@@ -14,6 +14,8 @@ import AboutPage from "./pages/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import PatientsPage from "./pages/PatientsPage";
 import ServicesPage from "./pages/ServicesPage";
+import SingleServicePage from "./pages/SingleServicePage";
+
 // #components :
 export default function App() {
   return (
@@ -29,6 +31,11 @@ export default function App() {
             <Route path="/contact" exact component={ContactUsPage} />
             <Route path="/patients" exact component={PatientsPage} />
             <Route path="/services" exact component={ServicesPage} />
+            <Route
+              path="/services/service"
+              exact
+              component={SingleServicePage}
+            />
           </Switch>
         </Router>
       </ThemeProvider>
