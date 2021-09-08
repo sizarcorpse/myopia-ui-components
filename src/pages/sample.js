@@ -1,5 +1,5 @@
 import React from "react";
-import Patients_Infomation from "../components/sections/Patients/Patients_Infomation";
+import MpAccordoin from "../components/UI/MpAccordoin";
 //Componetns
 
 import {
@@ -13,13 +13,13 @@ const GCard = (props) => {
   const {} = props;
 
   return (
-    <Grid component="main">
+    <Grid component="main" style={{ marginTop: 100 }}>
       <CssBaseline />
 
       <Grid item xs={12}>
         <Container>
-          <Box display="flex" justifyContent="center">
-            <Patients_Infomation />
+          <Box>
+            <MpAccordoin />
           </Box>
         </Container>
       </Grid>

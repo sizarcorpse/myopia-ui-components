@@ -93,7 +93,7 @@ const ServicesWhyUs = (props) => {
         "https://images.prismic.io/myopia/87882026-2ec4-4f5f-9abc-9e46ca7eb042_89.png",
       title: "Qualifierd doctors",
       description:
-        "Reliable & EfficientFrom paediatric to bariatric, whether complex or routine, it is designed and automated to deliver high quality data."
+        "Reliable & EfficientFrom paediatric to bariatric, it is designed and automated to deliver high quality data."
     },
     {
       icon:
@@ -113,7 +113,7 @@ const ServicesWhyUs = (props) => {
         "https://images.prismic.io/myopia/ef7d4568-7469-4473-9674-fd392006ef74_003.png",
       title: "Mordern facilities",
       description:
-        "Ultra low dose CT with the worlds first artificial intelligence AiCE assisted CT producing higher quality diagnostic images."
+        "Ultra low dose CT with the artificial intelligence AiCE assisted CT producing  diagnostic images."
     }
   ]);
   const localClasses = useStyles();
