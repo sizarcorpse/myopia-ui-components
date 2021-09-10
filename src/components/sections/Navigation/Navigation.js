@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PatientNavigation from "./PatientNavigation";
+import PractionerNavigation from "./PractionerNavigation";
 import {
   withStyles,
   makeStyles,
@@ -8,78 +10,80 @@ import {
   Typography,
   Box,
   Container,
-  Hidden
+  Hidden,
+  Grid,
+  Switch,
+  CssBaseline
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    background: "transparent",
-    height: "5.625em",
-    maxHeight: "5.625em",
-    display: "flex",
-    justifyContent: "center",
-    "& a": {
-      textDecoration: "none"
-    }
+  root: {},
+  header: {
+    background: (prop) =>
+      prop.mode ? theme.palette.primary.main : theme.palette.secondary.main
   },
-  navigationContent: {
-    width: "100%",
+  headerArea: {
+    height: 50,
     display: "flex",
+    justifyContent: "flex-end",
     alignItems: "center",
-    "& > h4 a": {
-      color: theme.palette.primary.light,
-      flexGrow: 1
-    }
-  },
-  navigationItems: {
-    display: "flex",
-    marginLeft: "auto",
-
-    "& p a": {
-      margin: theme.spacing(0, 2.5),
-      color: theme.palette.primary.light,
-      fontWeight: 500
+    "& p": {
+      color: (prop) =>
+        prop.mode ? theme.palette.primary.light : theme.palette.primary.light
     }
   }
 }));
 
+const fn = () => {
+  let haha = localStorage.getItem("mode");
+  return haha === "true" ? true : haha === "false" ? false : false;
+};
+
 const Navigation = (props) => {
   const {} = props;
-  const localClasses = useStyles();
+  const [mode, setMode] = useState(fn);
+  const localClasses = useStyles({ mode });
+
+  useEffect(() => {
+    localStorage.setItem("mode", mode);
+    console.log(mode);
+  }, [mode]);
+
+  const handleChange = (event) => {
+    setMode(!mode);
+  };
 
   return (
-    <Container>
-      <AppBar elevation={0} className={localClasses.root} position="absolute">
-        <Toolbar>
-          <Box className={localClasses.navigationContent}>
-            <Typography variant="h4">
-              <Link to={"/"}> MYOPIA </Link>
+    <Grid component="main">
+      <CssBaseline />
+
+      <Grid item xs={12} className={localClasses.header}>
+        <Container>
+          <Box className={localClasses.headerArea}>
+            <Typography variant="body1" color="primary">
+              Patient
             </Typography>
-            <Hidden smDown>
-              <Box className={localClasses.navigationItems}>
-                <Typography variant="body1">
-                  <Link to={"/about"}> About </Link>
-                </Typography>
-                <Typography variant="body1">
-                  <Link to={"/services"}> Services </Link>
-                </Typography>
-                <Typography variant="body1">
-                  <Link to="/patients"> Patient </Link>
-                </Typography>
-                <Typography variant="body1">
-                  <Link to="/contact"> Contact </Link>
-                </Typography>
-              </Box>
-            </Hidden>
+            <Switch
+              checked={mode}
+              onChange={handleChange}
+              color={mode ? "secondary" : "primary"}
+              name="checkedB"
+              inputProps={{ "aria-label": "primary checkbox" }}
+            />
+            <Typography variant="body1" color="primary">
+              Practioner
+            </Typography>
           </Box>
-        </Toolbar>
-      </AppBar>
-    </Container>
+        </Container>
+      </Grid>
+      <Grid item xs={5}>
+        <Container>
+          <Box>
+            {mode === false ? <PatientNavigation /> : <PractionerNavigation />}
+          </Box>
+        </Container>
+      </Grid>
+    </Grid>
   );
 };
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(Navigation);
+export default withStyles((theme) => ({}), { withTheme: true })(Navigation);

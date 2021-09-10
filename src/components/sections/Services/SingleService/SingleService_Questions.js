@@ -88,15 +88,12 @@ const SingleServiceQuestion = (props) => {
   const localClasses = useStyles();
   return (
     <Grid container spacing={3} className={localClasses.root}>
-      <Grid item xs={6}>
+      <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
         <Box>
-          {/* {questions.map((item, i) => (
-            <MpAccordoin item={item} key={i} />
-          ))} */}
           <MpAccordoin questions={questions} />
         </Box>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
         <Box>
           <Box className={localClasses.servicesTitle}>
             <Typography variant="h5" color="primary">
