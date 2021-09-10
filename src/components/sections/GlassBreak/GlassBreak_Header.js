@@ -57,17 +57,12 @@ const GlassBreakHeader = (props) => {
       <Grid item xs={12}>
         <Container>
           <Box>
-            <MpPageHeaderTitle title="Enjoy High Quality Radiology">
+            <MpPageHeaderTitle title="Break Glass">
               Our team of specialised radiologists, technicians and
               receptionists across our sites are committed to providing patients
               and their referring clinicians with the highest standards of care
               in our modern, professional and comfortable environments.
             </MpPageHeaderTitle>
-            <Box className={localClasses.callOfActions}>
-              <MpButton varient="primary" linkTo="/contact">
-                Access Patients Details
-              </MpButton>
-            </Box>
           </Box>
         </Container>
       </Grid>
@@ -75,9 +70,6 @@ const GlassBreakHeader = (props) => {
   );
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(GlassBreakHeader);
+export default withStyles((theme) => ({}), { withTheme: true })(
+  GlassBreakHeader
+);

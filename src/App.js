@@ -42,7 +42,7 @@ export default function App() {
             />
             <Route path="/practioner" exact component={PractionerHomePage} />
             <Route
-              path="/practioner/glass-break"
+              path="/practioner/break-glass"
               exact
               component={GlassBreakPage}
             />
