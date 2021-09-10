@@ -60,16 +60,16 @@ const PractionerNavigation = (props) => {
             <Hidden smDown>
               <Box className={localClasses.navigationItems}>
                 <Typography variant="body1">
-                  <Link to={"/about"}> About - 1 </Link>
+                  <Link to={"/practioner"}> Support </Link>
                 </Typography>
                 <Typography variant="body1">
-                  <Link to={"/services"}> Services </Link>
+                  <Link to={"/about"}> About </Link>
                 </Typography>
                 <Typography variant="body1">
-                  <Link to="/patients"> Patient </Link>
+                  <Link to="/patients"> Referral Forms </Link>
                 </Typography>
                 <Typography variant="body1">
-                  <Link to="/contact"> Contact </Link>
+                  <Link to="/contact"> Online Access </Link>
                 </Typography>
               </Box>
             </Hidden>

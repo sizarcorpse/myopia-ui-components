@@ -6,15 +6,19 @@ import { ThemeProvider } from "@material-ui/core";
 import Light from "./styles/Light";
 import Dark from "./styles/Dark";
 
+import sample from "./pages/sample";
 // #pages
 import Navigation from "./components/sections/Navigation/Navigation";
-import sample from "./pages/sample";
+// Patient
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import PatientsPage from "./pages/PatientsPage";
 import ServicesPage from "./pages/ServicesPage";
 import SingleServicePage from "./pages/SingleServicePage";
+// Practioner
+import PractionerHomePage from "./pages/PractionerHomePage";
+import GlassBreakPage from "./pages/GlassBreakPage";
 
 // #components :
 export default function App() {
@@ -35,6 +39,12 @@ export default function App() {
               path="/services/service"
               exact
               component={SingleServicePage}
+            />
+            <Route path="/practioner" exact component={PractionerHomePage} />
+            <Route
+              path="/practioner/glass-break"
+              exact
+              component={GlassBreakPage}
             />
           </Switch>
         </Router>

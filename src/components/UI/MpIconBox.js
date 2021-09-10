@@ -12,9 +12,11 @@ const useStyles = makeStyles((theme) => ({
         ? "column"
         : "column",
     justifyContent: "flex-start",
+
     gap: theme.spacing(2.5),
     [theme.breakpoints.down("xs")]: {
-      flexDirection: "row"
+      flexDirection: "row",
+      alignItems: "center"
     },
     "& img": {
       width: 75,
@@ -28,12 +30,17 @@ const useStyles = makeStyles((theme) => ({
   iconContent: {
     "& h5": {
       [theme.breakpoints.down("xs")]: {
-        fontSize: "1.2rem"
+        fontSize: "1.2rem",
+        textAlign: (props) => props.textCenter && "center"
       }
     },
 
     "& p": {
       marginTop: theme.spacing(1),
+
+      [theme.breakpoints.down("xs")]: {
+        textAlign: (props) => props.textCenter && "center"
+      },
       [theme.breakpoints.up("md")]: {
         maxWidth: "43ch"
       }
@@ -41,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 const MpIconBox = (props) => {
-  const { item, variant } = props;
-  const localClasses = useStyles({ variant });
+  const { item, variant, textCenter } = props;
+  const localClasses = useStyles({ variant, textCenter });
   return (
     <Box className={localClasses.root}>
       <img alt="hi" src={item.icon} />
@@ -64,7 +71,8 @@ MpIconBox.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string
   }),
-  variant: PropTypes.oneOf(["leftIcon", "topIcon"]).isRequired
+  variant: PropTypes.oneOf(["leftIcon", "topIcon"]).isRequired,
+  textCenter: PropTypes.bool
 };
 
 export default withStyles((theme) => ({}), { withTheme: true })(MpIconBox);

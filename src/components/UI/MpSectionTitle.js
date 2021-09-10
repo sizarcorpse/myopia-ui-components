@@ -51,21 +51,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MpSectionTitle = (props) => {
-  const { motto, title, align } = props;
+  const { motto, title, align, noMoto, noTitle } = props;
 
   const localClasses = useStyles({ align });
 
   return (
     <Box className={localClasses.root}>
       <Box className={localClasses.sectionTitleMotto}>
-        <Typography variant="body1">{motto}</Typography>
+        {!noMoto && <Typography variant="body1">{motto}</Typography>}
       </Box>
       <Box
         className={localClasses.sectionTitle}
         marginTop={{ xs: "-2rem", sm: "-2.5rem", md: "-3rem", lg: "-3.5rem" }}
       >
         <Typography variant="h2" color="primary">
-          {title}
+          {!noTitle && title}
         </Typography>
       </Box>
     </Box>
@@ -75,7 +75,9 @@ const MpSectionTitle = (props) => {
 MpSectionTitle.propTypes = {
   motto: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  align: PropTypes.oneOf(["left", "center", "right"])
+  align: PropTypes.oneOf(["left", "center", "right"]),
+  noMoto: PropTypes.bool,
+  noTitle: PropTypes.bool
 };
 export default withStyles(
   (theme) => ({

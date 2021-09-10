@@ -73,7 +73,7 @@ const MpIconText = (props) => {
 
       <Typography variant="body1" color="primary">
         <Link to="/services/service" underline="none">
-          {title}{" "}
+          {title}
         </Link>
       </Typography>
     </Box>
@@ -81,16 +81,11 @@ const MpIconText = (props) => {
 };
 
 MpIconText.propTypes = {
-  // item: PropTypes.exact({
-  //   icon: PropTypes.string.isRequired,
-  //   title: PropTypes.string.isRequired
-  // }),
+  item: PropTypes.exact({
+    icon: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  }),
   size: PropTypes.string
 };
 
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(MpIconText);
+export default withStyles((theme) => ({}), { withTheme: true })(MpIconText);
