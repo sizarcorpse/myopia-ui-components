@@ -12,11 +12,12 @@ const useStyles = makeStyles((theme) => ({
         ? "column"
         : "column",
     justifyContent: "flex-start",
+    alignItems: (props) => props.titleOnly && "center",
 
     gap: theme.spacing(2.5),
     [theme.breakpoints.down("xs")]: {
       flexDirection: "row",
-      alignItems: "center"
+      alignItems: (props) => props.textCenter && "center"
     },
     "& img": {
       width: 75,
@@ -48,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 const MpIconBox = (props) => {
-  const { item, variant, textCenter } = props;
-  const localClasses = useStyles({ variant, textCenter });
+  const { item, variant, textCenter, titleOnly } = props;
+  const localClasses = useStyles({ variant, textCenter, titleOnly });
   return (
     <Box className={localClasses.root}>
       <img alt="hi" src={item.icon} />
@@ -57,9 +58,11 @@ const MpIconBox = (props) => {
         <Typography variant="h5" color="primary">
           {item.title}
         </Typography>
-        <Typography variant="body1" color="primary">
-          {item.description}
-        </Typography>
+        {!titleOnly && (
+          <Typography variant="body1" color="primary">
+            {item.description}
+          </Typography>
+        )}
       </Box>
     </Box>
   );
@@ -72,7 +75,8 @@ MpIconBox.propTypes = {
     description: PropTypes.string
   }),
   variant: PropTypes.oneOf(["leftIcon", "topIcon"]).isRequired,
-  textCenter: PropTypes.bool
+  textCenter: PropTypes.bool,
+  titleOnly: PropTypes.bool
 };
 
 export default withStyles((theme) => ({}), { withTheme: true })(MpIconBox);

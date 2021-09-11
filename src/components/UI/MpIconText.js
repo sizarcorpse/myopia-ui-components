@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MpIconText = (props) => {
   const {
-    item: { icon, title },
+    item: { icon, title, url },
     size
   } = props;
   const localClasses = useStyles({ size });
@@ -72,7 +72,7 @@ const MpIconText = (props) => {
       <img alt="" src={icon} />
 
       <Typography variant="body1" color="primary">
-        <Link to="/services/service" underline="none">
+        <Link to={`${url}`} underline="none">
           {title}
         </Link>
       </Typography>
@@ -83,7 +83,8 @@ const MpIconText = (props) => {
 MpIconText.propTypes = {
   item: PropTypes.exact({
     icon: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
   }),
   size: PropTypes.string
 };

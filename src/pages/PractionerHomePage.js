@@ -4,10 +4,6 @@ import React from "react";
 import PractionerHomeHeader from "../components/sections/PractionerHome/PractionerHome_Header";
 import PractionerHomeWeOffer from "../components/sections/PractionerHome/PractionerHome_WeOffer";
 import PractionerHomeJoinToday from "../components/sections/PractionerHome/PractionerHome_JoinToday";
-// import HomeTechnology from "../components/sections/Home/Home_Technology";
-// import HomeServices from "../components/sections/Home/Home_Services";
-// import HomeLearMore from "../components/sections/Home/Home_LearMore";
-// import HomeTestimonials from "../components/sections/Home/Home_Testimonials";
 
 import {
   withStyles,

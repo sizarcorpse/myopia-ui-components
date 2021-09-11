@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import PatientNavigation from "./PatientNavigation";
 import PractionerNavigation from "./PractionerNavigation";
 import {
@@ -43,11 +43,17 @@ const Navigation = (props) => {
   const {} = props;
   const [mode, setMode] = useState(fn);
   const localClasses = useStyles({ mode });
+  let history = useHistory();
 
   useEffect(() => {
     localStorage.setItem("mode", mode);
-    console.log(mode);
-  }, [mode]);
+
+    if (mode === false) {
+      history.push("/");
+    } else if (mode === true) {
+      history.push("/practioner");
+    }
+  }, [mode, history]);
 
   const handleChange = (event) => {
     setMode(!mode);

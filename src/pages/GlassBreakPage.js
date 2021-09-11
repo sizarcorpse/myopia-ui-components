@@ -1,7 +1,9 @@
 import React from "react";
 
 //Componetns
-import PractionerHomeHeader from "../components/sections/PractionerHome/PractionerHome_Header";
+import GlassBreakHeader from "../components/sections/GlassBreak/GlassBreak_Header";
+import GlassBreakSelfService from "../components/sections/GlassBreak/GlassBreak_SelfService";
+import GlassBreakHowTo from "../components/sections/GlassBreak/GlassBreak_HowTo";
 
 import {
   withStyles,
@@ -10,36 +12,35 @@ import {
   Grid,
   CssBaseline
 } from "@material-ui/core";
-const PractionerGlassBreakPage = (props) => {
+const GlassBreakPage = (props) => {
   const {} = props;
 
   return (
     <Grid component="main">
       <CssBaseline />
 
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Box>
-          <PractionerHomeHeader />
+          <GlassBreakHeader />
         </Box>
       </Grid>
+
       <Grid item xs={12}>
         <Container>
           <Box>
-            <PractionerHomeWeOffer />
+            <GlassBreakSelfService />
           </Box>
         </Container>
       </Grid>
       <Grid item xs={12} style={{ backgroundColor: "#EDF1F6" }}>
         <Container>
           <Box>
-            <PractionerHomeJoinToday />
+            <GlassBreakHowTo />
           </Box>
         </Container>
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };
 
-export default withStyles((theme) => ({}), { withTheme: true })(
-  PractionerGlassBreakPage
-);
+export default withStyles((theme) => ({}), { withTheme: true })(GlassBreakPage);
