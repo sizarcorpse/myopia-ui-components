@@ -19,6 +19,8 @@ import SingleServicePage from "./pages/SingleServicePage";
 // Practioner
 import PractionerHomePage from "./pages/PractionerHomePage";
 import GlassBreakPage from "./pages/GlassBreakPage";
+import OrderReferralPadPage from "./pages/OrderReferralPadPage";
+import OnlineImagingPage from "./pages/OnlineImagingPage";
 
 // #components :
 export default function App() {
@@ -45,6 +47,16 @@ export default function App() {
               path="/practioner/break-glass"
               exact
               component={GlassBreakPage}
+            />
+            <Route
+              path="/practioner/order-referral-pad"
+              exact
+              component={OrderReferralPadPage}
+            />
+            <Route
+              path="/practioner/online-imaging"
+              exact
+              component={OnlineImagingPage}
             />
           </Switch>
         </Router>

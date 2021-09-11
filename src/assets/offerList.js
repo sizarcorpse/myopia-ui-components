@@ -15,13 +15,13 @@ export let servicesLists = [
     icon:
       "https://myopia.cdn.prismic.io/myopia/b0e0372c-ba84-45b5-8bf9-ae6973e55b99_refereal+pads.svg",
     title: "Order Referral Pads",
-    url: "#"
+    url: "/practioner/order-referral-pad"
   },
   {
     icon:
       "https://myopia.cdn.prismic.io/myopia/1ac46595-1413-4da6-b81a-69e5db70263e_noun_online+picture_3693647.svg",
     title: "Online Image Details",
-    url: "#"
+    url: "/practioner/online-imaging"
   },
   {
     icon:

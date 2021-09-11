@@ -114,6 +114,7 @@ light.overrides = {
   MuiOutlinedInput: {
     root: {
       maxHeight: 44,
+      backgroundColor: light.palette.primary.light,
       "& fieldset": {
         borderColor: light.palette.primary.main
       },
