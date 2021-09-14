@@ -1,4 +1,5 @@
 import React from "react";
+import MpDrawer from "../../Drawer/MpDrawer";
 import { Link } from "react-router-dom";
 import {
   withStyles,
@@ -71,6 +72,11 @@ const PatientNavigation = (props) => {
                   <Typography variant="body1">
                     <Link to="/contact"> Contact </Link>
                   </Typography>
+                </Box>
+              </Hidden>
+              <Hidden smUp>
+                <Box ml="auto">
+                  <MpDrawer />
                 </Box>
               </Hidden>
             </Box>
