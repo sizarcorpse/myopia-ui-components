@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import PatientNavigation from "./PatientNavigation";
 import PractionerNavigation from "./PractionerNavigation";
 import {
   withStyles,
   makeStyles,
-  AppBar,
-  Toolbar,
   Typography,
   Box,
   Container,
-  Hidden,
   Grid,
   Switch,
   CssBaseline
@@ -66,6 +63,11 @@ const Navigation = (props) => {
       <Grid item xs={12} className={localClasses.header}>
         <Container>
           <Box className={localClasses.headerArea}>
+            <Box>
+              <Typography variant="body1" color="primary">
+                <Link to="/sample">smaple</Link>
+              </Typography>
+            </Box>
             <Typography variant="body1" color="primary">
               Patient
             </Typography>

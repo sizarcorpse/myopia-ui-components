@@ -32,7 +32,7 @@ export default function App() {
 
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/s" component={sample} />
+            <Route path="/sample" exact component={sample} />
             <Route path="/about" exact component={AboutPage} />
             <Route path="/contact" exact component={ContactUsPage} />
             <Route path="/patients" exact component={PatientsPage} />

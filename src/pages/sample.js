@@ -1,5 +1,9 @@
 import React from "react";
 import MpAccordoin from "../components/UI/MpAccordoin";
+import MpHero from "../components/UI/MpHero";
+import MpButton from "../components/UI/MpButton";
+import MpHeroTitle from "../components/UI/MpHeroTitle";
+import MpButtonGroup from "../components/UI/MpButtonGroup";
 //Componetns
 
 import {
@@ -13,15 +17,24 @@ const GCard = (props) => {
   const {} = props;
 
   return (
-    <Grid component="main" style={{ marginTop: 100 }}>
+    <Grid component="main">
       <CssBaseline />
 
       <Grid item xs={12}>
-        <Container>
-          <Box>
-            <MpAccordoin />
-          </Box>
-        </Container>
+        <Box>
+          <MpHero>
+            <MpHeroTitle title="ABOUT US" motto="Who are we?">
+              Our professional staff are committed to efficiently carrying out
+              the delivery of quality imaging services by utilising
+              evidence-based medicine founded on the latest research and
+              contributes to the scientific literature.
+            </MpHeroTitle>
+            <MpButtonGroup>
+              <MpButton color="primary"> Search our Location</MpButton>
+              <MpButton color="primary"> Search our Location</MpButton>
+            </MpButtonGroup>
+          </MpHero>
+        </Box>
       </Grid>
     </Grid>
   );

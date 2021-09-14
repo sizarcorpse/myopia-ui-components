@@ -79,9 +79,4 @@ MpSectionTitle.propTypes = {
   noMoto: PropTypes.bool,
   noTitle: PropTypes.bool
 };
-export default withStyles(
-  (theme) => ({
-    // ...ThemeDistributor(theme)
-  }),
-  { withTheme: true }
-)(MpSectionTitle);
+export default withStyles((theme) => ({}), { withTheme: true })(MpSectionTitle);

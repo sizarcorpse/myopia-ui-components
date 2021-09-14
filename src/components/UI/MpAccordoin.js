@@ -17,15 +17,6 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiAccordionSummary-root": {
       minHeight: 70
     }
-  },
-  switch: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    margin: theme.spacing(1, 0),
-    "& > p": {
-      flexGrow: 1
-    }
   }
 }));
 
@@ -69,12 +60,8 @@ const MpAccordoin = (props) => {
   );
 };
 
-// MpAccordoin.propTypes = {
-//   item: PropTypes.exact({
-//     id: PropTypes.any,
-//     title: PropTypes.string.isRequired,
-//     content: PropTypes.string.isRequired
-//   })
-// };
+MpAccordoin.propTypes = {
+  questions: PropTypes.array
+};
 
 export default withStyles((theme) => ({}), { withTheme: true })(MpAccordoin);
